@@ -3,6 +3,10 @@ function addItem() {
 
     const itemName = document.querySelector("#item").value
  }
+ if (itemName === "") {Add  
+    alert("Digite um item válido")
+    return
+ }
  const item = {
     name: itemName,
     checked: false
