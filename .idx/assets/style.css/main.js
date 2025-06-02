@@ -22,6 +22,10 @@ function addItem() {
        sectionList.textContent = "" 
          items.map(item, index) =>
               }     sectionList.innerHTML += 
+
+              items.sort((itemA, itemB) => Number(itemA.checked) - Number(itemB.checked))
+              items.map((item, index) => {
+      sectionList.innerHTML += `
                 <div class="item">  
      <div>       
      <input type="checkbox" name="list" id="item-${index}" ${item.checked && "checked"}>   
