@@ -1,4 +1,4 @@
-const items=[]
+let items=[]
 function addItem() {
 
     const itemName = document.querySelector("#item").value
@@ -35,7 +35,10 @@ function addItem() {
       <img src="./assets/trash-icon.svg" alt="trash icon">    
       </button> 
        </div> 
+      
          `   } )
+         localStorage.setItem("items", JSON.stringify(items))
+         }
          function removeItem(itemName) { 
 const itemIdex = items.findIndex((item) => item.name === itemName)
 const divWarning = document.querySelector(".warning")
@@ -64,4 +67,13 @@ function checkItem(itemName) {
 function addHideWarningClass(){ 
     document.querySelector(".warning").classList.add("hide-warning")
 }
-  
+function verifyLocalStorageItems() {
+   const LocalStorageItems = localStorage.getItem("items")
+
+   if (LocalStorageItems) {
+      items = JSON.parse(LocalStorageItems)
+      showItemsList()
+   }
+}
+
+verifyLocalStorageItems()
