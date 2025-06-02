@@ -20,7 +20,7 @@ function addItem() {
               }     sectionList.innerHTML += 
                 <div class="item">  
      <div>       
-     <input type="checkbox" name="list" id="item-${index}">      
+     <input type="checkbox" name="list" id="item-${index}" ${item.checked && "checked"}>   
       <div class="custom-checkbox">   
       <img src="./assets/checked.svg" alt="checked">   
        </div>     
