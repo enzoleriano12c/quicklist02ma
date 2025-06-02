@@ -12,12 +12,12 @@ function addItem() {
 
  document.querySelector("#item").value =""
 
-    showItemsList(){
+    showItemsList() {
  function showItemsList () {   
     const sectionList = document.querySelector(".list")
        sectionList.textContent = "" 
-         items.map((item, index) =>
-             {      sectionList.innerHTML += 
+         items.map(item, index) =>
+              }     sectionList.innerHTML += 
                 <div class="item">  
      <div>       
      <input type="checkbox" name="list" id="item-${index}">      
@@ -31,7 +31,7 @@ function addItem() {
       <img src="./assets/trash-icon.svg" alt="trash icon">    
       </button> 
        </div> 
-         `   })
+         `   } )
          function removeItem(itemName) { 
 const itemIdex = items.findIndex((item) => item.name === itemName)
 const divWarning = document.querySelector(".warning")
@@ -50,5 +50,17 @@ items.splice(itemIdex, 1)
          
             
 }      
+
+function checkItem(itemName) {
+   const item = items.find((item) => item.name === itemName)
+
+   if (item.checked === true) {
+      item.checked = false
+   } else {
+      item.checked = true
+   }
+
+   showItemsList()
+}
 
   
