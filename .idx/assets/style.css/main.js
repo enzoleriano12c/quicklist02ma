@@ -26,8 +26,20 @@ function addItem() {
        </div>     
       <label for="item=${index}">${item.name}</label>
       </div>
-      <button>    
+      <button>
+        onclick="removeItem('${item.name}')"   
       <img src="./assets/trash-icon.svg" alt="trash icon">    
       </button> 
        </div> 
          `   })
+         function removeItem(itemName) { 
+const itemIdex = items.findIndex((item) => item.name === itemName)
+
+if (itemIdex !== -1) {
+   items.splice(itemIdex, 1)
+   }
+
+   showItemsList()
+         
+            
+}      
